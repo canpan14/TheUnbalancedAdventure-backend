@@ -1,4 +1,4 @@
-<% project_name = 'the-unbalanced-adventure-api' %>
+<% project_name = 'the-unbalanced-adventure' %>
 
 default: &default
   adapter: postgresql
