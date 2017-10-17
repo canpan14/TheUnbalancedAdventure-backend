@@ -1,9 +1,8 @@
 
 # frozen_string_literal: true
 
-class AdventurersController < ApplicationController
+class AdventurersController < ProtectedController
   before_action :set_adventurer, only: %i[show update destroy]
-
   # GET /adventurers
   def index
     @adventurers = Adventurer.all
@@ -18,7 +17,7 @@ class AdventurersController < ApplicationController
 
   # POST /adventurers
   def create
-    @adventurer = Adventurer.new(adventurer_params)
+    @adventurer = current_user.adventurers.build(adventurer_params)
 
     if @adventurer.save
       render json: @adventurer, status: :created, location: @adventurer
@@ -45,7 +44,7 @@ class AdventurersController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_adventurer
-    @adventurer = Adventurer.find(params[:id])
+    @adventurer = current_user.adventurers.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

@@ -8,5 +8,6 @@ class CreateAdventurers < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :adventurers, %i[user_id name], unique: true
   end
 end

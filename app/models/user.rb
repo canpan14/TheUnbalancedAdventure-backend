@@ -2,5 +2,6 @@
 
 class User < ApplicationRecord
   include Authentication
+  has_many :adventurers
   has_many :examples
 end
