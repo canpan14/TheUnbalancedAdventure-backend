@@ -5,7 +5,7 @@ class AdventurersController < ProtectedController
   before_action :set_adventurer, only: %i[show update destroy]
   # GET /adventurers
   def index
-    @adventurers = Adventurer.all
+    @adventurers = Adventurer.all.select { |a| a.user_id == current_user.id }
 
     render json: @adventurers
   end
