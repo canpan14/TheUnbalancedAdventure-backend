@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-class User < ApplicationRecord
-  include Authentication
+class Level < ApplicationRecord
   has_many :adventurers
 end

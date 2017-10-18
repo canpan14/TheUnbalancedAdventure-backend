@@ -1,0 +1,33 @@
+require "rails_helper"
+
+RSpec.describe LevelsController, type: :routing do
+  describe "routing" do
+
+    it "routes to #index" do
+      expect(:get => "/levels").to route_to("levels#index")
+    end
+
+
+    it "routes to #show" do
+      expect(:get => "/levels/1").to route_to("levels#show", :id => "1")
+    end
+
+
+    it "routes to #create" do
+      expect(:post => "/levels").to route_to("levels#create")
+    end
+
+    it "routes to #update via PUT" do
+      expect(:put => "/levels/1").to route_to("levels#update", :id => "1")
+    end
+
+    it "routes to #update via PATCH" do
+      expect(:patch => "/levels/1").to route_to("levels#update", :id => "1")
+    end
+
+    it "routes to #destroy" do
+      expect(:delete => "/levels/1").to route_to("levels#destroy", :id => "1")
+    end
+
+  end
+end
