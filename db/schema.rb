@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018234426) do
+ActiveRecord::Schema.define(version: 20171019162143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20171018234426) do
   create_table "enemies", force: :cascade do |t|
     t.string "name"
     t.bigint "level_id"
-    t.decimal "attack_chance"
-    t.decimal "dodge_chance"
-    t.decimal "predict_dodge_chance"
+    t.decimal "rock_chance"
+    t.decimal "paper_chance"
+    t.decimal "scissor_chance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["level_id"], name: "index_enemies_on_level_id"

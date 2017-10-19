@@ -1,4 +1,4 @@
-<% project_name = 'the-unbalanced-adventure' %>
+<% project_name = 'rps-rpg' %>
 
 default: &default
   adapter: postgresql

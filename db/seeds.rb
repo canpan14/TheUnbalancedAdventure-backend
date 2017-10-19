@@ -18,9 +18,9 @@
 end
 Level.create(number: 20, exp_needed: nil, attack: 25, health: 400)
 
-Enemy.create(name: 'Goblin', level_id: 1, attack_chance: 0.5, dodge_chance: 0.5,
-             predict_dodge_chance: 0.0)
-Enemy.create(name: 'Raging Goblin', level_id: 2, attack_chance: 0.9,
-             dodge_chance: 0.1, predict_dodge_chance: 0.0)
-Enemy.create(name: 'Stone Guardian', level_id: 3, attack_chance: 0.2,
-             dodge_chance: 0.4, predict_dodge_chance: 0.4)
+Enemy.create(name: 'Goblin', level_id: 1,
+             rock_chance: 0.34, paper_chance: 0.33, scissor_chance: 0.33)
+Enemy.create(name: 'Raging Goblin', level_id: 2,
+             rock_chance: 0.3, paper_chance: 0.1, scissor_chance: 0.6)
+Enemy.create(name: 'Stone Guardian', level_id: 3,
+             rock_chance: 0.8, paper_chance: 0.1, scissor_chance: 0.1)
