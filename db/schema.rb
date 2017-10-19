@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171018004703) do
+ActiveRecord::Schema.define(version: 20171018234426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20171018004703) do
     t.integer "current_exp"
     t.index ["level_id"], name: "index_adventurers_on_level_id"
     t.index ["user_id"], name: "index_adventurers_on_user_id"
+  end
+
+  create_table "enemies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "level_id"
+    t.decimal "attack_chance"
+    t.decimal "dodge_chance"
+    t.decimal "predict_dodge_chance"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["level_id"], name: "index_enemies_on_level_id"
   end
 
   create_table "examples", force: :cascade do |t|
@@ -55,5 +66,6 @@ ActiveRecord::Schema.define(version: 20171018004703) do
 
   add_foreign_key "adventurers", "levels"
   add_foreign_key "adventurers", "users"
+  add_foreign_key "enemies", "levels"
   add_foreign_key "examples", "users"
 end
