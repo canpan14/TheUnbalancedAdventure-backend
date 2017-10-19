@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class EnemySerializer < ActiveModel::Serializer
-  attributes :id, :name, :attack_chance, :dodge_chance, :predict_dodge_chance
+  attributes :id, :name, :rock_chance, :paper_chance, :scissor_chance
   has_one :level
 end
