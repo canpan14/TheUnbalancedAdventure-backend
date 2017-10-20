@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class LevelsController < ApplicationController
-  before_action :set_level, only: [:show, :update, :destroy]
+  before_action :set_level, only: %i[show update destroy]
 
   # GET /levels
   def index
@@ -39,13 +41,14 @@ class LevelsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_level
-      @level = Level.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def level_params
-      params.require(:level).permit(:number, :attack, :health)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_level
+    @level = Level.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def level_params
+    params.require(:level).permit(:number, :attack, :health)
+  end
 end
