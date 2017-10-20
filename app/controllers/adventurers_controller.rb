@@ -28,7 +28,7 @@ class AdventurersController < ProtectedController
 
   # PATCH/PUT /adventurers/1
   def update
-    if @adventurer.update(adventurer_params)
+    if @adventurer.update(adventurer_update_params)
       render json: @adventurer
     else
       render json: @adventurer.errors, status: :unprocessable_entity
@@ -50,5 +50,9 @@ class AdventurersController < ProtectedController
   # Only allow a trusted parameter "white list" through.
   def adventurer_params
     params.require(:adventurer).permit(:name, :user_id)
+  end
+
+  def adventurer_update_params
+    params.require(:adventurer).permit(:current_exp, :level_id)
   end
 end

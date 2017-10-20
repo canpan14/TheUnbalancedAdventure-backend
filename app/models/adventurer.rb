@@ -9,7 +9,7 @@ class Adventurer < ApplicationRecord
   validates :name, presence: true
 
   def init
-    self.level_id = 1
-    self.current_exp = 0
+    self.level_id ||= 1 if new_record?
+    self.current_exp ||= 0 if new_record?
   end
 end
