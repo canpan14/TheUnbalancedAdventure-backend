@@ -1,0 +1,2 @@
+class EnemyModifier < ApplicationRecord
+end

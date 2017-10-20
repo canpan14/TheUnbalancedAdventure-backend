@@ -10,6 +10,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# levels table
 base_params = { exp_needed: 10, attack: 5, health: 20 }
 (1..19).each do |l|
   level = Level.where(number: l).first_or_initialize
@@ -32,6 +33,7 @@ else
   last_level.update(number: 20, exp_needed: nil, attack: 25, health: 400)
 end
 
+# enemies table
 enemies_to_create = [
   { name: 'Goblin', level_id: 1,
     rock_chance: 0.34, paper_chance: 0.33, scissor_chance: 0.33 },
@@ -47,5 +49,34 @@ enemies_to_create.each do |enemy|
     Enemy.create(enemy)
   else
     found_enemy.update(enemy)
+  end
+end
+
+# enemy modifiers table
+modifiers_to_create = [
+  { text: 'Balanced', is_prefix: true, move_to_adjust: 'none', chance_adjust: 0,
+    learning_curve: 0.2, attack_mult: 1, health_mult: 1 },
+  { text: 'The Tactician', is_prefix: false, move_to_adjust: 'none', chance_adjust: 0,
+    learning_curve: 0.2, attack_mult: 1, health_mult: 1 },
+  { text: 'Magical', is_prefix: true, move_to_adjust: 'paper', chance_adjust: 0.25,
+    learning_curve: 0.075, attack_mult: 1.5, health_mult: 0.5 },
+  { text: 'The Sorcerer', is_prefix: false, move_to_adjust: 'paper', chance_adjust: 0.25,
+    learning_curve: 0.075, attack_mult: 1.5, health_mult: 0.5 },
+  { text: 'Unwavering', is_prefix: true, move_to_adjust: 'rock', chance_adjust: 0.25,
+    learning_curve: 0.025, attack_mult: 0.5, health_mult: 1.5 },
+  { text: 'The Guardian', is_prefix: false, move_to_adjust: 'rock', chance_adjust: 0.25,
+    learning_curve: 0.025, attack_mult: 0.5, health_mult: 1.5 },
+  { text: 'Agile', is_prefix: true, move_to_adjust: 'scissor', chance_adjust: 0.25,
+    learning_curve: 0.05, attack_mult: 1.25, health_mult: 0.75 },
+  { text: 'The Duelist', is_prefix: false, move_to_adjust: 'scissor', chance_adjust: 0.25,
+    learning_curve: 0.05, attack_mult: 1.25, health_mult: 0.75 }
+]
+
+modifiers_to_create.each do |modifier|
+  found_modifier = EnemyModifier.where(text: modifier[:text]).first_or_initialize
+  if found_modifier.new_record?
+    EnemyModifier.create(modifier)
+  else
+    found_modifier.update(modifier)
   end
 end
