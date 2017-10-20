@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020135320) do
+ActiveRecord::Schema.define(version: 20171020143439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,13 +40,14 @@ ActiveRecord::Schema.define(version: 20171020135320) do
   create_table "enemy_modifiers", force: :cascade do |t|
     t.string "text", null: false
     t.boolean "is_prefix"
-    t.string "move_to_adjust"
-    t.decimal "chance_adjust"
+    t.decimal "rock_chance"
     t.decimal "learning_curve"
     t.decimal "attack_mult"
     t.decimal "health_mult"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "paper_chance"
+    t.decimal "scissor_chance"
   end
 
   create_table "examples", force: :cascade do |t|

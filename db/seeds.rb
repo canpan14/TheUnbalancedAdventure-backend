@@ -54,21 +54,21 @@ end
 
 # enemy modifiers table
 modifiers_to_create = [
-  { text: 'Balanced', is_prefix: true, move_to_adjust: 'none', chance_adjust: 0,
+  { text: 'Balanced', is_prefix: true, rock_chance: 0, paper_chance: 0, scissor_chance: 0,
     learning_curve: 0.2, attack_mult: 1, health_mult: 1 },
-  { text: 'The Tactician', is_prefix: false, move_to_adjust: 'none', chance_adjust: 0,
+  { text: 'The Tactician', is_prefix: false, rock_chance: 0, paper_chance: 0, scissor_chance: 0,
     learning_curve: 0.2, attack_mult: 1, health_mult: 1 },
-  { text: 'Magical', is_prefix: true, move_to_adjust: 'paper', chance_adjust: 0.25,
+  { text: 'Magical', is_prefix: true, rock_chance: 0, paper_chance: 0.25, scissor_chance: 0,
     learning_curve: 0.075, attack_mult: 1.5, health_mult: 0.5 },
-  { text: 'The Sorcerer', is_prefix: false, move_to_adjust: 'paper', chance_adjust: 0.25,
+  { text: 'The Sorcerer', is_prefix: false, rock_chance: 0, paper_chance: 0.25, scissor_chance: 0,
     learning_curve: 0.075, attack_mult: 1.5, health_mult: 0.5 },
-  { text: 'Unwavering', is_prefix: true, move_to_adjust: 'rock', chance_adjust: 0.25,
+  { text: 'Unwavering', is_prefix: true, rock_chance: 0.25, paper_chance: 0, scissor_chance: 0,
     learning_curve: 0.025, attack_mult: 0.5, health_mult: 1.5 },
-  { text: 'The Guardian', is_prefix: false, move_to_adjust: 'rock', chance_adjust: 0.25,
+  { text: 'The Guardian', is_prefix: false, rock_chance: 0.25, paper_chance: 0, scissor_chance: 0,
     learning_curve: 0.025, attack_mult: 0.5, health_mult: 1.5 },
-  { text: 'Agile', is_prefix: true, move_to_adjust: 'scissor', chance_adjust: 0.25,
+  { text: 'Agile', is_prefix: true, rock_chance: 0, paper_chance: 0, scissor_chance: 0.25,
     learning_curve: 0.05, attack_mult: 1.25, health_mult: 0.75 },
-  { text: 'The Duelist', is_prefix: false, move_to_adjust: 'scissor', chance_adjust: 0.25,
+  { text: 'The Duelist', is_prefix: false, rock_chance: 0, paper_chance: 0, scissor_chance: 0.25,
     learning_curve: 0.05, attack_mult: 1.25, health_mult: 0.75 }
 ]
 
