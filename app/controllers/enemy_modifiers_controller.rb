@@ -49,8 +49,9 @@ class EnemyModifiersController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def enemy_modifier_params
-    params.require(:enemy_modifier).permit(:text, :is_prefix, :move_to_adjust,
-                                           :chance_adjust, :learning_curve,
-                                           :attack_mult, :health_mult)
+    params.require(:enemy_modifier).permit(:text, :is_prefix, :rock_chance,
+                                           :paper_chance, :scissor_chance,
+                                           :learning_curve, :attack_mult,
+                                           :health_mult)
   end
 end
