@@ -50,6 +50,6 @@ class EnemiesController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def enemy_params
     params.require(:enemy).permit(:name, :level_id, :attack_chance,
-                                  :dodge_chance, :predict_dodge_chance)
+                                  :dodge_chance, :predict_dodge_chance, :learning_curve)
   end
 end

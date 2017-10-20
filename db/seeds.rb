@@ -36,11 +36,11 @@ end
 # enemies table
 enemies_to_create = [
   { name: 'Goblin', level_id: 1,
-    rock_chance: 0.34, paper_chance: 0.33, scissor_chance: 0.33 },
+    rock_chance: 0.34, paper_chance: 0.33, scissor_chance: 0.33, learning_curve: 0.05 },
   { name: 'Raging Goblin', level_id: 2,
-    rock_chance: 0.3, paper_chance: 0.1, scissor_chance: 0.6 },
+    rock_chance: 0.3, paper_chance: 0.1, scissor_chance: 0.6, learning_curve: 0.01 },
   { name: 'Stone Guardian', level_id: 3,
-    rock_chance: 0.8, paper_chance: 0.1, scissor_chance: 0.1 }
+    rock_chance: 0.8, paper_chance: 0.1, scissor_chance: 0.1, learning_curve: 0.2 }
 ]
 
 enemies_to_create.each do |enemy|

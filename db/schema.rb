@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020143439) do
+ActiveRecord::Schema.define(version: 20171020150001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20171020143439) do
     t.decimal "scissor_chance"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "learning_curve"
     t.index ["level_id"], name: "index_enemies_on_level_id"
   end
 
