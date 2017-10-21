@@ -37,9 +37,9 @@ end
 enemies_to_create = [
   { name: 'Goblin', level_id: 1,
     rock_chance: 0.34, paper_chance: 0.33, scissor_chance: 0.33, learning_curve: 0.02 },
-  { name: 'Elf', level_id: 3,
+  { name: 'Elf', level_id: 1,
     rock_chance: 0.3, paper_chance: 0.1, scissor_chance: 0.6, learning_curve: 0.2 },
-  { name: 'Golem', level_id: 2,
+  { name: 'Golem', level_id: 1,
     rock_chance: 0.8, paper_chance: 0.1, scissor_chance: 0.1, learning_curve: 0.05 }
 ]
 
@@ -54,22 +54,30 @@ end
 
 # enemy modifiers table
 modifiers_to_create = [
-  { text: 'Balanced', is_prefix: true, rock_chance: 0, paper_chance: 0, scissor_chance: 0,
+  { text: 'Balanced', is_prefix: true,
+    rock_chance: 0, paper_chance: 0, scissor_chance: 0,
     learning_curve: 0.2, attack_mult: 1, health_mult: 1 },
-  { text: 'The Tactician', is_prefix: false, rock_chance: 0, paper_chance: 0, scissor_chance: 0,
+  { text: 'The Tactician', is_prefix: false,
+    rock_chance: 0, paper_chance: 0, scissor_chance: 0,
     learning_curve: 0.2, attack_mult: 1, health_mult: 1 },
-  { text: 'Magical', is_prefix: true, rock_chance: 0, paper_chance: 0.25, scissor_chance: 0,
-    learning_curve: 0.075, attack_mult: 1.5, health_mult: 0.5 },
-  { text: 'The Sorcerer', is_prefix: false, rock_chance: 0, paper_chance: 0.25, scissor_chance: 0,
-    learning_curve: 0.075, attack_mult: 1.5, health_mult: 0.5 },
-  { text: 'Unwavering', is_prefix: true, rock_chance: 0.25, paper_chance: 0, scissor_chance: 0,
-    learning_curve: 0.025, attack_mult: 0.5, health_mult: 1.5 },
-  { text: 'The Guardian', is_prefix: false, rock_chance: 0.25, paper_chance: 0, scissor_chance: 0,
-    learning_curve: 0.025, attack_mult: 0.5, health_mult: 1.5 },
-  { text: 'Agile', is_prefix: true, rock_chance: 0, paper_chance: 0, scissor_chance: 0.25,
-    learning_curve: 0.05, attack_mult: 1.25, health_mult: 0.75 },
-  { text: 'The Duelist', is_prefix: false, rock_chance: 0, paper_chance: 0, scissor_chance: 0.25,
-    learning_curve: 0.05, attack_mult: 1.25, health_mult: 0.75 }
+  { text: 'Magical', is_prefix: true,
+    rock_chance: 0, paper_chance: 0.25, scissor_chance: 0,
+    learning_curve: 0.075, attack_mult: 1.25, health_mult: 0.75 },
+  { text: 'The Sorcerer', is_prefix: false,
+    rock_chance: 0, paper_chance: 0.25, scissor_chance: 0,
+    learning_curve: 0.075, attack_mult: 1.25, health_mult: 0.75 },
+  { text: 'Unwavering', is_prefix: true,
+    rock_chance: 0.25, paper_chance: 0, scissor_chance: 0,
+    learning_curve: 0.025, attack_mult: 0.75, health_mult: 1.25 },
+  { text: 'The Guardian', is_prefix: false,
+    rock_chance: 0.25, paper_chance: 0, scissor_chance: 0,
+    learning_curve: 0.025, attack_mult: 0.75, health_mult: 1.25 },
+  { text: 'Agile', is_prefix: true,
+    rock_chance: 0, paper_chance: 0, scissor_chance: 0.25,
+    learning_curve: 0.05, attack_mult: 1.125, health_mult: 0.875 },
+  { text: 'The Duelist', is_prefix: false,
+    rock_chance: 0, paper_chance: 0, scissor_chance: 0.25,
+    learning_curve: 0.05, attack_mult: 1.125, health_mult: 0.875 }
 ]
 
 modifiers_to_create.each do |modifier|
