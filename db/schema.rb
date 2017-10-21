@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021043030) do
+ActiveRecord::Schema.define(version: 20171021231300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20171021043030) do
     t.bigint "level_id"
     t.integer "current_exp"
     t.boolean "is_alive"
+    t.integer "rock_count", default: 0
+    t.integer "paper_count", default: 0
+    t.integer "scissor_count", default: 0
     t.index ["level_id"], name: "index_adventurers_on_level_id"
     t.index ["user_id"], name: "index_adventurers_on_user_id"
   end
