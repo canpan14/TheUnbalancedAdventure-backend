@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020214440) do
+ActiveRecord::Schema.define(version: 20171021043030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,14 +52,6 @@ ActiveRecord::Schema.define(version: 20171020214440) do
     t.decimal "scissor_chance"
   end
 
-  create_table "examples", force: :cascade do |t|
-    t.text "text", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_examples_on_user_id"
-  end
-
   create_table "levels", force: :cascade do |t|
     t.integer "number", null: false
     t.integer "exp_needed"
@@ -82,5 +74,4 @@ ActiveRecord::Schema.define(version: 20171020214440) do
   add_foreign_key "adventurers", "levels"
   add_foreign_key "adventurers", "users"
   add_foreign_key "enemies", "levels"
-  add_foreign_key "examples", "users"
 end
