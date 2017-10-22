@@ -53,6 +53,6 @@ class AdventurersController < ProtectedController
   end
 
   def adventurer_update_params
-    params.require(:adventurer).permit(:current_exp, :level_id, :is_alive, :rock_count, :paper_count, :scissor_count)
+    params.require(:adventurer).permit(:current_exp, :level_id, :is_alive, :rock_count, :paper_count, :scissor_count, :kills)
   end
 end
