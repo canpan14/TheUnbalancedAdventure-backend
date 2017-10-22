@@ -5,7 +5,6 @@ class Adventurer < ApplicationRecord
 
   belongs_to :user
   belongs_to :level
-  validates :user_id
   validates :name, presence: true
 
   def init
