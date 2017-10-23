@@ -49,10 +49,11 @@ class AdventurersController < ProtectedController
 
   # Only allow a trusted parameter "white list" through.
   def adventurer_params
-    params.require(:adventurer).permit(:name, :user_id)
+    params.require(:adventurer).permit(:name, :attack_stat_points, :health_stat_points, :user_id)
   end
 
   def adventurer_update_params
-    params.require(:adventurer).permit(:current_exp, :level_id, :is_alive, :rock_count, :paper_count, :scissor_count, :kills)
+    params.require(:adventurer).permit(:current_exp, :level_id, :is_alive, :rock_count, :paper_count, :scissor_count,
+                                       :kills, :attack_stat_points, :health_stat_points)
   end
 end

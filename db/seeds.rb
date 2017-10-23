@@ -11,7 +11,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # levels table
-base_params = { exp_needed: 10, attack: 5, health: 20 }
+base_params = { exp_needed: 10, attack: 2, health: 10 }
 (1..19).each do |l|
   level = Level.where(number: l).first_or_initialize
   if level.new_record?
@@ -28,9 +28,9 @@ base_params = { exp_needed: 10, attack: 5, health: 20 }
 end
 last_level = Level.where(number: 20).first_or_initialize
 if last_level.new_record?
-  Level.create(number: 20, exp_needed: nil, attack: 25, health: 400)
+  Level.create(number: 20, exp_needed: nil, attack: 22, health: 200)
 else
-  last_level.update(number: 20, exp_needed: nil, attack: 25, health: 400)
+  last_level.update(number: 20, exp_needed: nil, attack: 22, health: 200)
 end
 
 # enemies table
