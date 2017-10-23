@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class StatesController < ApplicationController
-  before_action :set_state, only: [:show, :update, :destroy]
+  before_action :set_state, only: %i[show update destroy]
 
   # GET /states
   def index
@@ -39,13 +41,16 @@ class StatesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_state
-      @state = State.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def state_params
-      params.require(:state).permit(:adventurer_id, :a_health, :a_attack, :in_fight, :e_name, :e_level, :e_exp, :e_attack, :e_health, :e_rock_chance, :e_paper_chance, :e_scissor_chance, :e_learning_curve)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_state
+    @state = State.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def state_params
+    params.require(:state).permit(:adventurer_id, :a_health, :a_attack, :in_fight,
+                                  :e_name, :e_level, :e_exp, :e_attack, :e_health,
+                                  :e_rock_chance, :e_paper_chance, :e_scissor_chance, :e_learning_curve)
+  end
 end

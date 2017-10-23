@@ -3,7 +3,7 @@
 class CreateStates < ActiveRecord::Migration[5.1]
   def change
     create_table :states do |t|
-      t.references :adventurer, foreign_key: true
+      t.references :adventurer, index: true, foreign_key: true
       t.integer :a_health, default: 0
       t.integer :a_attack, default: 0
       t.boolean :in_fight, default: false

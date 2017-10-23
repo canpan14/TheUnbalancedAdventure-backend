@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023125046) do
+ActiveRecord::Schema.define(version: 20171023131826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,9 @@ ActiveRecord::Schema.define(version: 20171023125046) do
     t.integer "paper_count", default: 0
     t.integer "scissor_count", default: 0
     t.integer "kills", default: 0
+    t.bigint "state_id"
     t.index ["level_id"], name: "index_adventurers_on_level_id"
+    t.index ["state_id"], name: "index_adventurers_on_state_id"
     t.index ["user_id"], name: "index_adventurers_on_user_id"
   end
 
@@ -95,6 +97,7 @@ ActiveRecord::Schema.define(version: 20171023125046) do
   end
 
   add_foreign_key "adventurers", "levels"
+  add_foreign_key "adventurers", "states"
   add_foreign_key "adventurers", "users"
   add_foreign_key "enemies", "levels"
   add_foreign_key "states", "adventurers"

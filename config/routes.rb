@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   resources :levels, only: %i[index show]
   resources :enemy_modifiers, only: %i[index show]
   resources :enemies, only: %i[index show]
-  resources :states, except: %i[new edit]
+  resources :states, except: %i[new edit create]
 end
