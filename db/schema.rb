@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023011558) do
+ActiveRecord::Schema.define(version: 20171023125046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,25 @@ ActiveRecord::Schema.define(version: 20171023011558) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "states", force: :cascade do |t|
+    t.bigint "adventurer_id"
+    t.integer "a_health", default: 0
+    t.integer "a_attack", default: 0
+    t.boolean "in_fight", default: false
+    t.string "e_name"
+    t.integer "e_level", default: 0
+    t.integer "e_exp", default: 0
+    t.integer "e_attack", default: 0
+    t.integer "e_health", default: 0
+    t.decimal "e_rock_chance", default: "0.0"
+    t.decimal "e_paper_chance", default: "0.0"
+    t.decimal "e_scissor_chance", default: "0.0"
+    t.decimal "e_learning_curve", default: "0.0"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["adventurer_id"], name: "index_states_on_adventurer_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "token", null: false
@@ -78,4 +97,5 @@ ActiveRecord::Schema.define(version: 20171023011558) do
   add_foreign_key "adventurers", "levels"
   add_foreign_key "adventurers", "users"
   add_foreign_key "enemies", "levels"
+  add_foreign_key "states", "adventurers"
 end
