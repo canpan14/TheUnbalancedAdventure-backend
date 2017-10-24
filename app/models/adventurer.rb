@@ -6,7 +6,7 @@ class Adventurer < ApplicationRecord
 
   belongs_to :user
   belongs_to :level
-  has_one :state, dependent: :destroy
+  has_one :state
   validates :name, presence: true
 
   def init

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171023201329) do
+ActiveRecord::Schema.define(version: 20171024171120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,7 +70,6 @@ ActiveRecord::Schema.define(version: 20171023201329) do
   end
 
   create_table "states", force: :cascade do |t|
-    t.bigint "adventurer_id"
     t.integer "a_health", default: 0
     t.integer "a_attack", default: 0
     t.boolean "in_fight", default: false
@@ -85,6 +84,7 @@ ActiveRecord::Schema.define(version: 20171023201329) do
     t.decimal "e_learning_curve", default: "0.0"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "adventurer_id"
     t.index ["adventurer_id"], name: "index_states_on_adventurer_id"
   end
 
@@ -102,5 +102,4 @@ ActiveRecord::Schema.define(version: 20171023201329) do
   add_foreign_key "adventurers", "states"
   add_foreign_key "adventurers", "users"
   add_foreign_key "enemies", "levels"
-  add_foreign_key "states", "adventurers"
 end

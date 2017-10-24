@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeColumnsEnemyModifiers < ActiveRecord::Migration[5.1]
   def change
     remove_column :enemy_modifiers, :move_to_adjust

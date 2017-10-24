@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 class State < ApplicationRecord
-  has_one :adventurer
+  belongs_to :adventurer, dependent: :destroy
   has_one :user, through: :adventurer
 end
