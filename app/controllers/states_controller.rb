@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class StatesController < ApplicationController
+class StatesController < ProtectedController
   before_action :set_state, only: %i[show update destroy]
 
   # GET /states
@@ -13,17 +13,6 @@ class StatesController < ApplicationController
   # GET /states/1
   def show
     render json: @state
-  end
-
-  # POST /states
-  def create
-    @state = State.new(state_params)
-
-    if @state.save
-      render json: @state, status: :created, location: @state
-    else
-      render json: @state.errors, status: :unprocessable_entity
-    end
   end
 
   # PATCH/PUT /states/1
@@ -44,7 +33,7 @@ class StatesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_state
-    @state = State.find(params[:id])
+    @state = current_user.states.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.
