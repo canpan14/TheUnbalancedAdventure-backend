@@ -26,11 +26,17 @@ end
 # enemies table
 enemies_to_create = [
   { name: 'Goblin', level_id: 1,
-    rock_chance: 0.34, paper_chance: 0.33, scissor_chance: 0.33, learning_curve: 0.02 },
+    rock_chance: 0.4, paper_chance: 0.2, scissor_chance: 0.4, learning_curve: 0.02 },
   { name: 'Elf', level_id: 1,
     rock_chance: 0.3, paper_chance: 0.1, scissor_chance: 0.6, learning_curve: 0.2 },
   { name: 'Golem', level_id: 1,
-    rock_chance: 0.8, paper_chance: 0.1, scissor_chance: 0.1, learning_curve: 0.05 }
+    rock_chance: 0.8, paper_chance: 0.1, scissor_chance: 0.1, learning_curve: 0.05 },
+  { name: 'Vampire', level_id: 1,
+    rock_chance: 0.155, paper_chance: 0.330, scissor_chance: 0.415, learning_curve: 0.4 },
+  { name: 'Human', level_id: 1,
+    rock_chance: 0.33, paper_chance: 0.34, scissor_chance: 0.33, learning_curve: 0.1 },
+  { name: 'Hermit', level_id: 1,
+    rock_chance: 0.2, paper_chance: 0.6, scissor_chance: 0.2, learning_curve: 0.1 }
 ]
 
 enemies_to_create.each do |enemy|
